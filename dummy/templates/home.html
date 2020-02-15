@@ -6,6 +6,11 @@
     <title>Rate</title>
 </head>
 <body>
-    <h1>rate</h1>
+    <h1>rate_with table</h1>
+{% for item in data %}
+<tr>
+    <td><p>{{item.name}} {{item.rate}}</p></td>
+</tr>
+{% endfor %}
 </body>
 </html>

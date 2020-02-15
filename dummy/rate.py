@@ -3,6 +3,7 @@ from io import StringIO
 from dummy.config import db
 from dummy.models import Rate, RateSchema
 from werkzeug import Response
+from sqlalchemy import desc
 
 
 def read_rate():
@@ -81,3 +82,23 @@ def generate_file():
         yield data.getvalue()
         data.seek(0)
         data.truncate(0)
+
+
+def read_rate_by_name():
+    # Query the database for all the notes
+    rate = Rate.query.order_by(Rate.name).all()
+
+    # Serialize the list of notes from our data
+    rate_schema = RateSchema(many=True)
+    data = rate_schema.dump(rate)
+    return data
+
+
+def read_rate_by_rate():
+    # Query the database for all the notes
+    rate = Rate.query.order_by(desc(Rate.rate)).all()
+
+    # Serialize the list of notes from our data
+    rate_schema = RateSchema(many=True)
+    data = rate_schema.dump(rate)
+    return data
