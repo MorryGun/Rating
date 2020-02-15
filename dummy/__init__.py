@@ -20,7 +20,6 @@ def home():
     :return:        the rendered template 'home.html'
     """
     data = read_rate_by_rate()
-    print(data)
     return render_template('home.html', data=data)
 
 

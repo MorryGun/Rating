@@ -2,6 +2,7 @@ Flask
 connexion
 flask_sqlAlchemy
 flask_marshmallow
+flask-bootstrap
 marshmallow_sqlalchemy
 marshmallow
 swagger-ui-bundle
