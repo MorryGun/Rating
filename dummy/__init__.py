@@ -4,7 +4,8 @@ The flask application package.
 from flask import render_template
 from dummy.config import connex_app, app
 from dummy.build_database import create_db
-from dummy.rate import read_rate_by_name, read_rate_by_rate
+from dummy.rate import read_rate_by_rate
+from dummy.result import read_grouped_results
 
 # Read the swagger.yml file to configure the endpoints
 connex_app.add_api('swagger.yml', strict_validation=True,
@@ -21,6 +22,18 @@ def home():
     """
     data = read_rate_by_rate()
     return render_template('home.html', data=data)
+
+
+@app.route('/matches')
+def matches():
+    """
+    This function just responds to the browser ULR
+    localhost:5000/
+    :return:        the rendered template 'home.html'
+    """
+    data = read_grouped_results()
+    print(data)
+    return render_template('matches.html', data=data)
 
 
 create_db()

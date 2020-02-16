@@ -153,3 +153,14 @@ def check_current_result_id():
         return max(item.result_id for item in all_matches)+1
     else:
         return 1
+
+
+def read_grouped_results():
+    data = read_results()
+    grouped_data = []
+    match_ids = set()
+    for i in data:
+        match_ids.add(i['match_id'])
+    for i in match_ids:
+        grouped_data.append([x for x in data if x['match_id'] == i])
+    return grouped_data

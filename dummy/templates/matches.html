@@ -14,8 +14,8 @@
     <a href="#" class="navbar-brand" ><img class="navbar-brand" src="/static/logo.svg">Розумний паб</a>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active"><a class="nav-link" href="/">Рейтинг</a></li>
-          <li class="nav-item"><a class="nav-link" href="/matches">Матчі</a></li>
+          <li class="nav-item"><a class="nav-link" href="/">Рейтинг</a></li>
+          <li class="nav-item active"><a class="nav-link" href="/matches">Матчі</a></li>
           <li class="nav-item">
               <a class="nav-link pull-right" href="https://www.facebook.com/CleverPub/">
                   <i class="fa fa-facebook-square"></i>
@@ -26,22 +26,26 @@
 </nav>
 
 <div class="container">
+    {% for datum in data %}
     <table class = "table">
     <thead>
     <tr>
+        <th>Дата</th>
         <th>Гравець</th>
-        <th>Рейтинг</th>
+        <th>Результат</th>
     </tr>
     </thead>
     <tbody>
-        {% for item in data %}
+    {% for item in datum%}
     <tr>
+        <td>{{item.date}}</td>
         <td>{{item.name}}</td>
-        <td>{{item.rate}}</td>
-        {% endfor %}
+        <td>{{item.points}}</td>
     </tr>
+    {% endfor %}
     </tbody>
-</table>
+    </table>
+    {% endfor %}
 </div>
 
 {% endblock %}
