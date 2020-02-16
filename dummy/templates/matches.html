@@ -29,18 +29,18 @@
     {% for datum in data %}
     <table class = "table">
     <thead>
-    <tr>
-        <th>Дата</th>
-        <th>Гравець</th>
-        <th>Результат</th>
+    <tr class="row">
+        <th class="col-md-4">Дата</th>
+        <th class="col-md-6">Гравець</th>
+        <th class="col-md-2">Результат</th>
     </tr>
     </thead>
     <tbody>
     {% for item in datum%}
-    <tr>
-        <td>{{item.date}}</td>
-        <td>{{item.name}}</td>
-        <td>{{item.points}}</td>
+    <tr class="row">
+        <td class="col-md-4">{{item.date}}</td>
+        <td class="col-md-6">{{item.name}}</td>
+        <td class="col-md-2">{{item.points}}</td>
     </tr>
     {% endfor %}
     </tbody>

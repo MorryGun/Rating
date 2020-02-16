@@ -32,7 +32,6 @@ def matches():
     :return:        the rendered template 'home.html'
     """
     data = read_grouped_results()
-    print(data)
     return render_template('matches.html', data=data)
 
 

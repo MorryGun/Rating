@@ -53,7 +53,7 @@ paths:
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/Result" 
+              $ref: "#/definitions/Result"
     post:
       operationId: "dummy.result.add_result"
       tags:
@@ -72,7 +72,7 @@ paths:
       responses:
         201:
           description: "New result successfully added"
-          schema: 
+          schema:
             type: "string"
     patch:
       operationId: "dummy.result.replace_result"
@@ -90,7 +90,7 @@ paths:
       responses:
         200:
           description: "New result successfully added"
-          schema: 
+          schema:
             type: "string"
   /result/{result_id}:
     delete:
@@ -108,7 +108,7 @@ paths:
       responses:
         200:
           description: "Result is deleted"
-          schema: 
+          schema:
             type: "string"
   /result/upload:
     post:
@@ -174,4 +174,3 @@ definitions:
       rate:
         type: "integer"
         format: "int32"
-  

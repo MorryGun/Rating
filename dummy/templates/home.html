@@ -29,6 +29,7 @@
     <table class = "table">
     <thead>
     <tr>
+        <th>#</th>
         <th>Гравець</th>
         <th>Рейтинг</th>
     </tr>
@@ -36,6 +37,7 @@
     <tbody>
         {% for item in data %}
     <tr>
+        <td>{{loop.index}}</td>
         <td>{{item.name}}</td>
         <td>{{item.rate}}</td>
         {% endfor %}
